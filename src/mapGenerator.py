@@ -3,7 +3,7 @@ from terrain import Terrain
 
 class MapGenerator:
     EMPTY = 0   
-    TREE = 1    
+    TREE = 1
     
     def __init__(self, width=10, height=10, terrain=None):
         self.width = width
@@ -30,20 +30,15 @@ class MapGenerator:
         if not self.map_grid:
             print("Aucune carte générée. Appelez generate_map() d'abord.")
             return
-        
-        print(f"Carte générée avec {self.terrain.get_percentage_of_trees()}% d'arbres:")
-        print("-" * (self.width * 2))
-        
+
         for row in self.map_grid:
             formatted_cells = []
             for cell in row:
                 if cell == self.TREE:
                     formatted_cells.append("🌳")
                 else:
-                    formatted_cells.append("🌱")
+                    formatted_cells.append("🟫")
             print(" ".join(formatted_cells))
-        
-        print("-" * (self.width * 2))
         
         total_cells = self.width * self.height
         tree_count = sum(row.count(self.TREE) for row in self.map_grid)
@@ -54,7 +49,7 @@ class MapGenerator:
         print(f"  - Pourcentage d'arbres souhaité: {self.terrain.get_percentage_of_trees()}%")
         print(f"  - Pourcentage d'arbres réel: {actual_percentage:.1f}%")
         print(f"  - Nombre d'arbres: {tree_count} 🌳")
-        print(f"  - Terrain vide: {total_cells - tree_count} cases 🌱")
+        print(f"  - Terrain vide: {total_cells - tree_count} cases 🟫")
     
     
     def get_map(self):
