@@ -4,7 +4,7 @@ from mapGenerator import MapGenerator
 
 
 def main():
-    mapGenerator = MapGenerator(width=10, height=10, percentage_of_trees=80)
+    mapGenerator = MapGenerator(width=10, height=10, percentage_of_trees=50)
     mapGenerator.generate()
 
     logger = ConsoleMapLogger()

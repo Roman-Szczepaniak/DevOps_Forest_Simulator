@@ -11,4 +11,10 @@ class ConsoleMapLogger(IMapLogger):
 
     def log(self, map_grid):
         for row in map_grid.grid:
-            print(" ".join(self.SYMBOLS[node.state] for node in row))
+            symbols = []
+            for node in row:
+                if node.state == Node.FIRE:
+                    symbols.append(self.SYMBOLS[node.state]) 
+                else:
+                    symbols.append(self.SYMBOLS[node.state])
+            print(" ".join(symbols))

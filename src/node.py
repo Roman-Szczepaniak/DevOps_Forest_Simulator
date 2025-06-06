@@ -3,10 +3,11 @@ class Node:
     TREE = "tree"
     FIRE = "fire"
     BURNED = "burned"
+    
 
     def __init__(self, state=EMPTY):
         self.state = state
-        self.burn_start = None 
+        self.burn_start = None
 
     def is_burnable(self):
         return self.state == Node.TREE
