@@ -1,21 +1,22 @@
-from terrain import Terrain
-from mapGenerator import MapGenerator
 from fireGenerator import FireGenerator
+from consoleMapLogger import ConsoleMapLogger
+from mapGenerator import MapGenerator
+
 
 def main():
-    terrain = Terrain(percentage_of_trees=80)
-    map_gen = MapGenerator(width=10, height=10, terrain=terrain)
-    map_gen.generate_map()
+    mapGenerator = MapGenerator(width=10, height=10, percentage_of_trees=80)
+    mapGenerator.generate()
 
-    print("🌳 Carte initiale :")
-    map_gen.print_map_console()
+    logger = ConsoleMapLogger()
+    print("Carte initiale :")
+    logger.log(mapGenerator)
 
-    simulator = FireGenerator(map_gen)
-    simulator.start_fire()
-    simulator.spread_fire()
+    sim = FireGenerator(mapGenerator)
+    sim.start_fire()
+    sim.spread()
 
-    print("\n🔥 Carte après propagation du feu :")
-    simulator.print_fire_map()
+    print("\nCarte après feu :")
+    logger.log(mapGenerator)
 
 if __name__ == "__main__":
     main()
