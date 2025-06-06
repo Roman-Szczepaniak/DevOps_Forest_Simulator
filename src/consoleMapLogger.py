@@ -1,7 +1,7 @@
-from MapLoggerI import MapLoggerI
+from IMapLogger import IMapLogger
 from node import Node
 
-class ConsoleMapLogger(MapLoggerI):
+class ConsoleMapLogger(IMapLogger):
     SYMBOLS = {
         Node.EMPTY: "🟫",
         Node.TREE: "🌳",

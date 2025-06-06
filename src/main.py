@@ -8,6 +8,7 @@ def main():
     mapGenerator.generate()
 
     logger = ConsoleMapLogger()
+    # logger = HtmlLogger()
     print("Carte initiale :")
     logger.log(mapGenerator)
 
