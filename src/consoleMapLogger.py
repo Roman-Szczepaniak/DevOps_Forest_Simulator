@@ -1,5 +1,5 @@
-from IMapLogger import IMapLogger
-from node import Node
+from src.IMapLogger import IMapLogger
+from src.node import Node
 
 class ConsoleMapLogger(IMapLogger):
     SYMBOLS = {
