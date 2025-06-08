@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>Carte de la Forêt</title>
+<style>
+body { font-family: monospace; background: #222; color: white; }
+.grid { display: inline-block; line-height: 1.2; margin-bottom: 20px; }
+.row { display: flex; }
+.cell { width: 24px; height: 24px; text-align: center; }
+</style>
+</head>
+<body>
+<h1>Simulations de Feu de Forêt</h1>
+<h2>Carte initiale</h2>
+<div class='grid'>
+<div class='row'>
+<div class='cell'>🟫</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🟫</div>
+</div>
+<div class='row'>
+<div class='cell'>🌳</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🟫</div>
+</div>
+<div class='row'>
+<div class='cell'>🌳</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🌳</div>
+</div>
+<div class='row'>
+<div class='cell'>🌳</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🟫</div>
+</div>
+<div class='row'>
+<div class='cell'>🌳</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🟫</div>
+</div>
+<div class='row'>
+<div class='cell'>🌳</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🟫</div>
+</div>
+<div class='row'>
+<div class='cell'>🟫</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🟫</div>
+</div>
+<div class='row'>
+<div class='cell'>🟫</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🟫</div>
+</div>
+<div class='row'>
+<div class='cell'>🟫</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🟫</div>
+</div>
+<div class='row'>
+<div class='cell'>🟫</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🌳</div>
+</div>
+</div>
+<h2>Après feu sans arbre coupé</h2>
+<div class='grid'>
+<div class='row'>
+<div class='cell'>🟫</div>
+<div class='cell'>⬛</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🟫</div>
+<div class='cell'>⬛</div>
+<div class='cell'>⬛</div>
+<div class='cell'>🟫</div>
+<div class='cell'>⬛</div>
+<div class='cell'>⬛</div>
+<div class='cell'>🟫</div>
+</div>
+<div class='row'>
+<div class='cell'>⬛</div>
+<div class='cell'>🟫</div>
+<div class='cell'>⬛</div>
+<div class='cell'>🟫</div>
+<div class='cell'>⬛</div>
+<div class='cell'>⬛</div>
+<div class='cell'>🟫</div>
+<div class='cell'>⬛</div>
+<div class='cell'>⬛</div>
+<div class='cell'>🟫</div>
+</div>
+<div class='row'>
+<div class='cell'>⬛</div>
+<div class='cell'>🟫</div>
+<div class='cell'>⬛</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🟫</div>
+<div class='cell'>⬛</div>
+<div class='cell'>🟫</div>
+<div class='cell'>⬛</div>
+<div class='cell'>⬛</div>
+<div class='cell'>⬛</div>
+</div>
+<div class='row'>
+<div class='cell'>⬛</div>
+<div class='cell'>🟫</div>
+<div class='cell'>⬛</div>
+<div class='cell'>⬛</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🟫</div>
+<div class='cell'>⬛</div>
+<div class='cell'>⬛</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🟫</div>
+</div>
+<div class='row'>
+<div class='cell'>⬛</div>
+<div class='cell'>⬛</div>
+<div class='cell'>⬛</div>
+<div class='cell'>🟫</div>
+<div class='cell'>⬛</div>
+<div class='cell'>🟫</div>
+<div class='cell'>⬛</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🟫</div>
+</div>
+<div class='row'>
+<div class='cell'>⬛</div>
+<div class='cell'>⬛</div>
+<div class='cell'>🟫</div>
+<div class='cell'>⬛</div>
+<div class='cell'>🔥</div>
+<div class='cell'>⬛</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🟫</div>
+</div>
+<div class='row'>
+<div class='cell'>🟫</div>
+<div class='cell'>⬛</div>
+<div class='cell'>⬛</div>
+<div class='cell'>⬛</div>
+<div class='cell'>⬛</div>
+<div class='cell'>⬛</div>
+<div class='cell'>⬛</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🟫</div>
+</div>
+<div class='row'>
+<div class='cell'>🟫</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🟫</div>
+<div class='cell'>⬛</div>
+<div class='cell'>🟫</div>
+<div class='cell'>⬛</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🟫</div>
+</div>
+<div class='row'>
+<div class='cell'>🟫</div>
+<div class='cell'>⬛</div>
+<div class='cell'>⬛</div>
+<div class='cell'>⬛</div>
+<div class='cell'>⬛</div>
+<div class='cell'>⬛</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🟫</div>
+</div>
+<div class='row'>
+<div class='cell'>🟫</div>
+<div class='cell'>⬛</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🟫</div>
+<div class='cell'>⬛</div>
+<div class='cell'>⬛</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🌳</div>
+</div>
+</div>
+<h2>Après feu avec arbre coupé</h2>
+<div class='grid'>
+<div class='row'>
+<div class='cell'>🟫</div>
+<div class='cell'>⬛</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🟫</div>
+</div>
+<div class='row'>
+<div class='cell'>⬛</div>
+<div class='cell'>🟫</div>
+<div class='cell'>⬛</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🟫</div>
+</div>
+<div class='row'>
+<div class='cell'>⬛</div>
+<div class='cell'>🟫</div>
+<div class='cell'>⬛</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🌳</div>
+</div>
+<div class='row'>
+<div class='cell'>⬛</div>
+<div class='cell'>🟫</div>
+<div class='cell'>⬛</div>
+<div class='cell'>⬛</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🟫</div>
+</div>
+<div class='row'>
+<div class='cell'>⬛</div>
+<div class='cell'>⬛</div>
+<div class='cell'>⬛</div>
+<div class='cell'>🟫</div>
+<div class='cell'>⬛</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🟫</div>
+</div>
+<div class='row'>
+<div class='cell'>⬛</div>
+<div class='cell'>⬛</div>
+<div class='cell'>🟫</div>
+<div class='cell'>⬛</div>
+<div class='cell'>🔥</div>
+<div class='cell'>✂️</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🟫</div>
+</div>
+<div class='row'>
+<div class='cell'>🟫</div>
+<div class='cell'>⬛</div>
+<div class='cell'>⬛</div>
+<div class='cell'>⬛</div>
+<div class='cell'>⬛</div>
+<div class='cell'>⬛</div>
+<div class='cell'>⬛</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🟫</div>
+</div>
+<div class='row'>
+<div class='cell'>🟫</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🟫</div>
+<div class='cell'>⬛</div>
+<div class='cell'>🟫</div>
+<div class='cell'>⬛</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🟫</div>
+</div>
+<div class='row'>
+<div class='cell'>🟫</div>
+<div class='cell'>⬛</div>
+<div class='cell'>⬛</div>
+<div class='cell'>⬛</div>
+<div class='cell'>⬛</div>
+<div class='cell'>⬛</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🟫</div>
+</div>
+<div class='row'>
+<div class='cell'>🟫</div>
+<div class='cell'>⬛</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🟫</div>
+<div class='cell'>⬛</div>
+<div class='cell'>⬛</div>
+<div class='cell'>🟫</div>
+<div class='cell'>🌳</div>
+<div class='cell'>🌳</div>
+</div>
+</div>
+</body>
+</html>
