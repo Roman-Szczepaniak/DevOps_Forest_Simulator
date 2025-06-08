@@ -10,7 +10,9 @@ class ConsoleMapLogger(IMapLogger):
         Node.CUT: "✂️"
     }
 
-    def log(self, map_grid):
+    def log(self, map_grid ,title=None):
+        if title:
+            print(f"\n{title}\n")
         for row in map_grid.grid:
             symbols = []
             for node in row:
