@@ -18,7 +18,10 @@ class FireGenerator:
             self.map.grid[r][c].ignite(step=self.step)
 
     def spread(self):
-        directions = [(-1,0), (1,0), (0,-1), (0,1)]
+        directions = [(-1, -1), (-1, 0), (-1, 1),
+                    ( 0, -1),          ( 0, 1),
+                    ( 1, -1), ( 1, 0), ( 1, 1)]
+
 
         while True:
             self.step += 1
