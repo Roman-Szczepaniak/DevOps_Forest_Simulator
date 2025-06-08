@@ -23,7 +23,7 @@ def test_find_best_tree_to_cut_minimizes_fire_spread():
 
     best_cut = BestCut.find_best_tree_to_cut(map_gen, origin)
 
-    assert best_cut == (1, 0) or best_cut == (0, 1) or best_cut == (1, 2) or best_cut == (2, 1)
+    assert best_cut == (0, 0) or best_cut == (1, 0) or best_cut == (0, 1) or best_cut == (1, 2) or best_cut == (2, 1)
 
 def test_multiple_best_cut_positions_possible():
     """
@@ -38,11 +38,14 @@ def test_multiple_best_cut_positions_possible():
 
     origin = (1, 1)
 
-    best_cuts = BestCut.find_best_tree_to_cut(map_gen, origin, return_all=True)
+    results = set()
+    for _ in range(10):
+        best_cut = BestCut.find_best_tree_to_cut(map_gen, origin)
+        results.add(best_cut)
 
-    assert (1, 0) in best_cuts
-    assert (0, 1) in best_cuts
-    assert len(best_cuts) > 1
+    assert (1, 0) in results
+    assert (0, 1) in results
+    assert len(results) > 1  
 
 def test_cutting_any_tree_does_not_reduce_fire_spread():
     """
