@@ -6,7 +6,8 @@ class ConsoleMapLogger(IMapLogger):
         Node.EMPTY: "🟫",
         Node.TREE: "🌳",
         Node.FIRE: "🔥",
-        Node.BURNED: "⬛"
+        Node.BURNED: "⬛",
+        Node.CUT: "✂️"
     }
 
     def log(self, map_grid):
