@@ -1,6 +1,6 @@
-from fireGenerator import FireGenerator
-from consoleMapLogger import ConsoleMapLogger
-from mapGenerator import MapGenerator
+from src.fireGenerator import FireGenerator
+from src.consoleMapLogger import ConsoleMapLogger
+from src.mapGenerator import MapGenerator
 
 
 def main():
