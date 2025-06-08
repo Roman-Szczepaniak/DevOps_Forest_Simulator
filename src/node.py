@@ -3,7 +3,7 @@ class Node:
     TREE = "tree"
     FIRE = "fire"
     BURNED = "burned"
-    
+    CUT = "cut"
 
     def __init__(self, state=EMPTY):
         self.state = state
@@ -13,8 +13,10 @@ class Node:
         return self.state == Node.TREE
 
     def ignite(self, step=0):
-        self.state = Node.FIRE
-        self.burn_start = step
+        if self.state == Node.TREE:
+            self.state = Node.FIRE
+            self.burn_start = step
 
     def burn_out(self):
-        self.state = Node.BURNED
+        if self.state == Node.FIRE:
+            self.state = Node.BURNED

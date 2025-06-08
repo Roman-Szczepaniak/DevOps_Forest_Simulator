@@ -2,20 +2,28 @@ from src.node import Node
 import random
 
 class FireGenerator:
-    def __init__(self, map_grid):
+    def __init__(self, map_grid, origin=None):
         self.map = map_grid
         self.step = 0
-        self.origin = None
+        self.origin = origin
 
     def start_fire(self):
-        trees = [(r, c) for r in range(self.map.height)
-                          for c in range(self.map.width)
-                          if self.map.grid[r][c].state == Node.TREE]
+        if self.origin is None:
+            trees = [(r, c) for r in range(self.map.height)
+                            for c in range(self.map.width)
+                            if self.map.grid[r][c].state == Node.TREE]
 
-        if trees:
-            r, c = random.choice(trees)
-            self.origin = (r, c)
+            if trees:
+                r, c = random.choice(trees)
+                self.origin = (r, c)
+        else:
+            r, c = self.origin
+
+        if self.origin:
             self.map.grid[r][c].ignite(step=self.step)
+            return self.origin
+
+        return None
 
     def spread(self):
         directions = [(-1, -1), (-1, 0), (-1, 1),
